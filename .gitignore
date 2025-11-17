@@ -19,8 +19,10 @@ config/credentials.json
 config/token.pickle
 
 # Database
-data/*.db
-data/*.db-journal
+# IMPORTANT: For Streamlit Cloud deployment, we commit the demo database
+# Uncomment these lines if you don't want to commit the database:
+# data/*.db
+# data/*.db-journal
 
 # IDE
 .vscode/

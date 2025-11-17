@@ -128,6 +128,26 @@ def render_add_videos_page():
     st.title("➕ Add Videos")
     st.markdown("Add YouTube videos for analysis")
 
+    # Check if OAuth2 credentials are available
+    import os
+    credentials_path = os.getenv('YOUTUBE_CREDENTIALS_PATH', 'config/credentials.json')
+
+    if not os.path.exists(credentials_path):
+        st.warning("⚠️ **Cloud Deployment Mode**: Video upload requires OAuth2 credentials which are not available in cloud deployments.")
+        st.info("""
+        **This feature works locally only.**
+
+        On Streamlit Cloud, OAuth2 credentials cannot be used (requires browser interaction).
+
+        **Options:**
+        1. **View Demo Data**: Check the "📊 Video Library" to see pre-populated sample videos
+        2. **Run Locally**: Clone the repo and run locally with your OAuth2 credentials
+        3. **GitHub**: View source code to see the full implementation
+
+        [View on GitHub](https://github.com/YOUR_USERNAME/YOUR_REPO_NAME)
+        """)
+        st.stop()
+
     st.divider()
 
     # Input method tabs
