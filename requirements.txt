@@ -1,0 +1,23 @@
+# Core dependencies for demo
+streamlit>=1.31.0
+pandas>=2.1.0  # Use latest compatible version
+
+# YouTube API (OAuth2 required!)
+google-api-python-client==2.115.0
+google-auth-oauthlib==1.2.0
+google-auth-httplib2==0.2.0
+
+# OpenAI
+openai==1.12.0
+
+# YouTube Transcript (unofficial but works for public videos)
+youtube-transcript-api==0.6.2
+
+# Database (SQLite, built-in to Python)
+sqlalchemy==2.0.25
+
+# Validation
+pydantic==2.6.0
+
+# Utilities
+python-dotenv==1.0.1
